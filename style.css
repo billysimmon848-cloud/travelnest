@@ -2698,6 +2698,83 @@ FLIGHT ACCESS POPUP
 
 }
 
+/* =========================================================
+   FLIGHT DETAILS TEXT VISIBILITY
+========================================================= */
+
+.flight-result {
+  color: var(--ink);
+  background: var(--white);
+}
+
+
+.flight-route-card,
+.information-item,
+.journey-section {
+  color: var(--ink);
+}
+
+
+.route-location strong {
+  color: var(--ink);
+}
+
+
+.route-location span:last-child,
+.route-label,
+.route-middle > span:last-child {
+  color: var(--muted);
+}
+
+
+.information-item span {
+  color: var(--muted);
+}
+
+
+.information-item strong {
+  color: var(--ink);
+}
+
+
+.journey-heading h3 {
+  color: var(--ink);
+}
+
+
+.journey-heading > span {
+  color: var(--muted);
+}
+
+
+.progress-step span {
+  color: var(--muted);
+}
+
+
+/* =========================================================
+   NORMAL SECTION TEXT
+========================================================= */
+
+.section-heading h2,
+.popular-heading h2,
+.before-card h3,
+.service-item h3,
+.faq-item summary,
+.contact-card h2 {
+  color: var(--ink);
+}
+
+
+.section-heading p,
+.popular-heading > p,
+.before-card p,
+.service-item p,
+.faq-item p,
+.contact-card p {
+  color: var(--muted);
+}
+
 
 /* =========================================================
 TABLET / MOBILE NAVIGATION
