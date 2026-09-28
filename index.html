@@ -6,15 +6,9 @@
 
   <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="description"
-    content="Track your flight, explore popular destinations, and prepare for your journey."
-  >
+  <meta name="description" content="Track your flight, explore popular destinations, and prepare for your journey.">
 
   <title>
     Flight Tracking
@@ -22,10 +16,7 @@
 
   <link rel="icon" href="imgs/fav-icon.png" type="image/png">
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -39,10 +30,7 @@
 
     <div class="container header-inner">
 
-      <a
-        href="index.html"
-        class="brand"
-      >
+      <a href="index.html" class="brand">
 
         <span class="brand-mark">
           T
@@ -55,15 +43,9 @@
       </a>
 
 
-      <nav
-        class="header-nav"
-        id="headerNav"
-      >
+      <nav class="header-nav" id="headerNav">
 
-        <a
-          href="#track"
-          class="active"
-        >
+        <a href="#track" class="active">
           Track Flight
         </a>
 
@@ -86,23 +68,15 @@
       </nav>
 
 
-      <a
-        href="#track"
-        class="header-button"
-      >
+      <a href="#track" class="header-button">
         Track a Flight
       </a>
 
 
       <!-- MOBILE MENU BUTTON -->
 
-      <button
-        type="button"
-        class="mobile-menu-button"
-        id="mobileMenuButton"
-        aria-label="Open menu"
-        aria-expanded="false"
-      >
+      <button type="button" class="mobile-menu-button" id="mobileMenuButton" aria-label="Open menu"
+        aria-expanded="false">
 
         <span></span>
         <span></span>
@@ -122,6 +96,76 @@
 
   <main>
 
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero airplane-bg airplane-1">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            YOUR JOURNEY STARTS HERE
+          </div>
+
+
+          <h1>
+            Travel with
+            <span>confidence.</span>
+          </h1>
+
+
+          <p class="hero-description">
+
+            Track your flight, explore your journey details,
+            and find useful travel information before you fly.
+
+          </p>
+
+
+          <!-- TRACKING FORM -->
+
+          <form id="trackingForm" class="tracking-form">
+
+            <label for="trackingNumber">
+              Flight tracking number
+            </label>
+
+
+            <div class="tracking-input-row">
+
+              <input type="text" id="trackingNumber" name="trackingNumber" placeholder="Enter tracking number"
+                autocomplete="off" required>
+
+
+              <button type="submit" id="trackButton">
+                Track Flight
+              </button>
+
+            </div>
+
+
+            <p class="tracking-hint">
+
+              Enter the tracking number provided with
+              your flight document.
+
+            </p>
+
+
+            <p id="trackingMessage" class="tracking-message"></p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- =====================================================
          QUICK ACCESS
     ====================================================== -->
@@ -133,10 +177,7 @@
         <div class="quick-grid">
 
 
-          <a
-            href="#track"
-            class="quick-card"
-          >
+          <a href="#track" class="quick-card">
 
             <div class="quick-icon">
               ✈
@@ -158,10 +199,7 @@
 
 
 
-          <a
-            href="#popular-flights"
-            class="quick-card"
-          >
+          <a href="#popular-flights" class="quick-card">
 
             <div class="quick-icon">
               ◉
@@ -183,10 +221,7 @@
 
 
 
-          <a
-            href="#before-you-fly"
-            class="quick-card"
-          >
+          <a href="#before-you-fly" class="quick-card">
 
             <div class="quick-icon">
               ✓
@@ -219,10 +254,7 @@
          POPULAR FLIGHTS
     ====================================================== -->
 
-    <section
-      id="popular-flights"
-      class="popular-section"
-    >
+    <section id="popular-flights" class="popular-section">
 
       <div class="container">
 
@@ -254,15 +286,9 @@
         <div class="popular-grid">
 
 
-          <a
-            href="#track"
-            class="destination-card"
-          >
+          <a href="#track" class="destination-card">
 
-            <img
-              src="imgs/phuket.png"
-              alt="Lisbon"
-            >
+            <img src="imgs/phuket.png" alt="Lisbon">
 
             <div class="destination-overlay">
 
@@ -284,15 +310,9 @@
 
 
 
-          <a
-            href="#track"
-            class="destination-card"
-          >
+          <a href="#track" class="destination-card">
 
-            <img
-              src="imgs/terminalwithlugage.png"
-              alt="Istanbul"
-            >
+            <img src="imgs/terminalwithlugage.png" alt="Istanbul">
 
             <div class="destination-overlay">
 
@@ -314,15 +334,9 @@
 
 
 
-          <a
-            href="#track"
-            class="destination-card"
-          >
+          <a href="#track" class="destination-card">
 
-            <img
-              src="imgs/seats.png"
-              alt="Athens"
-            >
+            <img src="imgs/seats.png" alt="Athens">
 
             <div class="destination-overlay">
 
@@ -344,15 +358,9 @@
 
 
 
-          <a
-            href="#track"
-            class="destination-card"
-          >
+          <a href="#track" class="destination-card">
 
-            <img
-              src="imgs/onseatat terminal.png"
-              alt="New York"
-            >
+            <img src="imgs/onseatat terminal.png" alt="New York">
 
             <div class="destination-overlay">
 
@@ -374,15 +382,9 @@
 
 
 
-          <a
-            href="#track"
-            class="destination-card"
-          >
+          <a href="#track" class="destination-card">
 
-            <img
-              src="imgs/lauguage.png"
-              alt="Bangkok"
-            >
+            <img src="imgs/lauguage.png" alt="Bangkok">
 
             <div class="destination-overlay">
 
@@ -404,15 +406,9 @@
 
 
 
-          <a
-            href="#track"
-            class="destination-card"
-          >
+          <a href="#track" class="destination-card">
 
-            <img
-              src="imgs/boardingOutside.png"
-              alt="Vancouver"
-            >
+            <img src="imgs/boardingOutside.png" alt="Vancouver">
 
             <div class="destination-overlay">
 
@@ -445,10 +441,7 @@
          TRACKING RESULT
     ====================================================== -->
 
-    <section
-      id="track"
-      class="tracking-section"
-    >
+    <section id="track" class="tracking-section">
 
       <div class="container">
 
@@ -474,10 +467,7 @@
 
         <!-- EMPTY STATE -->
 
-        <div
-          id="trackingEmpty"
-          class="tracking-empty"
-        >
+        <div id="trackingEmpty" class="tracking-empty">
 
           <div class="empty-icon">
             ✈
@@ -502,10 +492,7 @@
 
         <!-- FLIGHT RESULT -->
 
-        <div
-          id="flightResult"
-          class="flight-result hidden"
-        >
+        <div id="flightResult" class="flight-result hidden">
 
 
           <div class="flight-result-header">
@@ -530,10 +517,7 @@
             </div>
 
 
-            <div
-              id="resultStatus"
-              class="flight-status"
-            >
+            <div id="resultStatus" class="flight-status">
               --
             </div>
 
@@ -759,16 +743,10 @@
             <div class="journey-progress">
 
 
-              <div
-                class="progress-line"
-                id="progressLine"
-              ></div>
+              <div class="progress-line" id="progressLine"></div>
 
 
-              <div
-                class="progress-step"
-                data-status="Processing"
-              >
+              <div class="progress-step" data-status="Processing">
 
                 <div class="progress-circle">
                   1
@@ -781,10 +759,7 @@
               </div>
 
 
-              <div
-                class="progress-step"
-                data-status="Confirmed"
-              >
+              <div class="progress-step" data-status="Confirmed">
 
                 <div class="progress-circle">
                   2
@@ -797,10 +772,7 @@
               </div>
 
 
-              <div
-                class="progress-step"
-                data-status="current"
-              >
+              <div class="progress-step" data-status="current">
 
                 <div class="progress-circle">
                   3
@@ -822,10 +794,7 @@
 
           <!-- ERROR -->
 
-          <div
-            id="flightError"
-            class="flight-error hidden"
-          >
+          <div id="flightError" class="flight-error hidden">
 
             <div class="error-icon">
               !
@@ -864,10 +833,7 @@
          BEFORE YOU FLY
     ====================================================== -->
 
-    <section
-      id="before-you-fly"
-      class="before-section airplane-bg airplane-2"
-    >
+    <section id="before-you-fly" class="before-section airplane-bg airplane-2">
 
       <div class="container">
 
@@ -999,10 +965,7 @@
          TRAVEL SERVICES
     ====================================================== -->
 
-    <section
-      id="services"
-      class="services-section airplane-bg airplane-3"
-    >
+    <section id="services" class="services-section airplane-bg airplane-3">
 
       <div class="container">
 
@@ -1027,10 +990,7 @@
             </p>
 
 
-            <a
-              href="#contact"
-              class="primary-button"
-            >
+            <a href="#contact" class="primary-button">
               Get Travel Help
             </a>
 
@@ -1261,10 +1221,7 @@
          FAQ
     ====================================================== -->
 
-    <section
-      id="faq"
-      class="faq-section"
-    >
+    <section id="faq" class="faq-section">
 
       <div class="container">
 
@@ -1403,10 +1360,7 @@
          CONTACT
     ====================================================== -->
 
-    <section
-      id="contact"
-      class="contact-section"
-    >
+    <section id="contact" class="contact-section">
 
       <div class="container">
 
@@ -1437,17 +1391,11 @@
 
           <div class="contact-actions">
 
-            <a
-              href="mailto:info@Travellnest.com"
-              class="contact-button"
-            >
+            <a href="mailto:info@Travellnest.com" class="contact-button">
               Contact Support
             </a>
 
-            <a
-              href="#track"
-              class="contact-link"
-            >
+            <a href="#track" class="contact-link">
               Track another flight →
             </a>
 
@@ -1476,10 +1424,7 @@
 
       <div class="footer-brand">
 
-        <a
-          href="index.html"
-          class="brand"
-        >
+        <a href="index.html" class="brand">
 
           <span class="brand-mark">
             T
@@ -1571,26 +1516,15 @@
        FREE / TEST FLIGHT POPUP
   ====================================================== -->
 
-  <div
-    id="flightAccessPopup"
-    class="flight-popup hidden"
-  >
+  <div id="flightAccessPopup" class="flight-popup hidden">
 
-    <div
-      class="flight-popup-overlay"
-      onclick="closeFlightAccessPopup()"
-    ></div>
+    <div class="flight-popup-overlay" onclick="closeFlightAccessPopup()"></div>
 
 
     <div class="flight-popup-card">
 
 
-      <button
-        type="button"
-        class="flight-popup-close"
-        onclick="closeFlightAccessPopup()"
-        aria-label="Close"
-      >
+      <button type="button" class="flight-popup-close" onclick="closeFlightAccessPopup()" aria-label="Close">
         ×
       </button>
 
@@ -1616,11 +1550,7 @@
       </p>
 
 
-      <button
-        type="button"
-        class="flight-popup-button"
-        onclick="closeFlightAccessPopup()"
-      >
+      <button type="button" class="flight-popup-button" onclick="closeFlightAccessPopup()">
         Continue
       </button>
 
