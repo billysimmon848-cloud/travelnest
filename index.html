@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Track your flight, explore popular destinations, and prepare for your journey."
+  >
+
+  <title>
+    Flight Tracking
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        href="index.html"
+        class="brand"
+      >
+
+        <span class="brand-mark">
+          T
+        </span>
+
+        <span class="brand-text">
+          Travellnest
+        </span>
+
+      </a>
+
+
+      <nav
+        class="header-nav"
+        id="headerNav"
+      >
+
+        <a
+          href="#track"
+          class="active"
+        >
+          Track Flight
+        </a>
+
+        <a href="#popular-flights">
+          Popular Flights
+        </a>
+
+        <a href="#before-you-fly">
+          Before You Fly
+        </a>
+
+        <a href="#services">
+          Services
+        </a>
+
+        <a href="#faq">
+          FAQ
+        </a>
+
+      </nav>
+
+
+      <a
+        href="#track"
+        class="header-button"
+      >
+        Track a Flight
+      </a>
+
+
+      <!-- MOBILE MENU BUTTON -->
+
+      <button
+        type="button"
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+      </button>
+
+    </div>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="hero airplane-bg airplane-1">
+
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            YOUR JOURNEY STARTS HERE
+          </div>
+
+
+          <h1>
+            Travel with
+            <span>confidence.</span>
+          </h1>
+
+
+          <p class="hero-description">
+
+            Track your flight, explore your journey details,
+            and find useful travel information before you fly.
+
+          </p>
+
+
+          <!-- TRACKING FORM -->
+
+          <form
+            id="trackingForm"
+            class="tracking-form"
+          >
+
+            <label for="trackingNumber">
+              Flight tracking number
+            </label>
+
+
+            <div class="tracking-input-row">
+
+              <input
+                type="text"
+                id="trackingNumber"
+                name="trackingNumber"
+                placeholder="Enter tracking number"
+                autocomplete="off"
+                required
+              >
+
+
+              <button
+                type="submit"
+                id="trackButton"
+              >
+                Track Flight
+              </button>
+
+            </div>
+
+
+            <p class="tracking-hint">
+
+              Enter the tracking number provided with
+              your flight document.
+
+            </p>
+
+
+            <p
+              id="trackingMessage"
+              class="tracking-message"
+            ></p>
+
+          </form>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="hero-visual">
+
+          <div class="hero-card">
+
+            <div class="hero-card-top">
+
+              <span>
+                FLIGHT TRACKING
+              </span>
+
+              <span class="status-dot"></span>
+
+            </div>
+
+
+            <div class="hero-route">
+
+              <div class="hero-airport">
+
+                <strong>
+                  BOS
+                </strong>
+
+                <span>
+                  Boston
+                </span>
+
+              </div>
+
+
+              <div class="hero-plane">
+
+                <span>
+                  ✈
+                </span>
+
+                <div class="hero-line"></div>
+
+              </div>
+
+
+              <div class="hero-airport">
+
+                <strong>
+                  LIL
+                </strong>
+
+                <span>
+                  Lille
+                </span>
+
+              </div>
+
+            </div>
+
+
+            <div class="hero-card-footer">
+
+              <span>
+                FLIGHT STATUS
+              </span>
+
+              <span>
+                TRACKING AVAILABLE
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK ACCESS
+    ====================================================== -->
+
+    <section class="quick-section">
+
+      <div class="container">
+
+        <div class="quick-grid">
+
+
+          <a
+            href="#track"
+            class="quick-card"
+          >
+
+            <div class="quick-icon">
+              ✈
+            </div>
+
+            <div>
+
+              <h3>
+                Track a Flight
+              </h3>
+
+              <p>
+                Check your flight status and journey details.
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#popular-flights"
+            class="quick-card"
+          >
+
+            <div class="quick-icon">
+              ◉
+            </div>
+
+            <div>
+
+              <h3>
+                Explore Destinations
+              </h3>
+
+              <p>
+                Discover popular routes and destinations.
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#before-you-fly"
+            class="quick-card"
+          >
+
+            <div class="quick-icon">
+              ✓
+            </div>
+
+            <div>
+
+              <h3>
+                Before You Fly
+              </h3>
+
+              <p>
+                Prepare for check-in, baggage and boarding.
+              </p>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         POPULAR FLIGHTS
+    ====================================================== -->
+
+    <section
+      id="popular-flights"
+      class="popular-section"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading popular-heading">
+
+          <div>
+
+            <div class="eyebrow">
+              EXPLORE
+            </div>
+
+            <h2>
+              Popular flights
+            </h2>
+
+          </div>
+
+
+          <p>
+            Explore some of the routes travellers
+            commonly search for.
+          </p>
+
+        </div>
+
+
+
+        <div class="popular-grid">
+
+
+          <a
+            href="#track"
+            class="destination-card"
+          >
+
+            <img
+              src="imgs/phuket.png"
+              alt="Lisbon"
+            >
+
+            <div class="destination-overlay">
+
+              <span>
+                Popular route
+              </span>
+
+              <h3>
+                Phuket → Lisbon
+              </h3>
+
+              <p>
+                Explore Lisbon
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#track"
+            class="destination-card"
+          >
+
+            <img
+              src="imgs/terminalwithlugage.png"
+              alt="Istanbul"
+            >
+
+            <div class="destination-overlay">
+
+              <span>
+                Popular route
+              </span>
+
+              <h3>
+                London → Istanbul
+              </h3>
+
+              <p>
+                Explore Istanbul
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#track"
+            class="destination-card"
+          >
+
+            <img
+              src="imgs/seats.png"
+              alt="Athens"
+            >
+
+            <div class="destination-overlay">
+
+              <span>
+                Popular route
+              </span>
+
+              <h3>
+                Amsterdam → Athens
+              </h3>
+
+              <p>
+                Explore Athens
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#track"
+            class="destination-card"
+          >
+
+            <img
+              src="imgs/onseatat terminal.png"
+              alt="New York"
+            >
+
+            <div class="destination-overlay">
+
+              <span>
+                Popular route
+              </span>
+
+              <h3>
+                Tokyo → New York
+              </h3>
+
+              <p>
+                Explore New York
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#track"
+            class="destination-card"
+          >
+
+            <img
+              src="imgs/lauguage.png"
+              alt="Bangkok"
+            >
+
+            <div class="destination-overlay">
+
+              <span>
+                Popular route
+              </span>
+
+              <h3>
+                Chiang Mai → Bangkok
+              </h3>
+
+              <p>
+                Explore Bangkok
+              </p>
+
+            </div>
+
+          </a>
+
+
+
+          <a
+            href="#track"
+            class="destination-card"
+          >
+
+            <img
+              src="imgs/boardingOutside.png"
+              alt="Vancouver"
+            >
+
+            <div class="destination-overlay">
+
+              <span>
+                Popular route
+              </span>
+
+              <h3>
+                Toronto → Vancouver
+              </h3>
+
+              <p>
+                Explore Vancouver
+              </p>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRACKING RESULT
+    ====================================================== -->
+
+    <section
+      id="track"
+      class="tracking-section"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading">
+
+          <div class="eyebrow">
+            YOUR FLIGHT
+          </div>
+
+          <h2>
+            Flight status
+          </h2>
+
+          <p>
+            Enter your tracking number above to view
+            the available details for your journey.
+          </p>
+
+        </div>
+
+
+
+        <!-- EMPTY STATE -->
+
+        <div
+          id="trackingEmpty"
+          class="tracking-empty"
+        >
+
+          <div class="empty-icon">
+            ✈
+          </div>
+
+          <h3>
+            No flight selected
+          </h3>
+
+          <p>
+            Your flight information will appear here
+            after you search for a tracking number.
+          </p>
+
+          <a href="#trackingNumber">
+            Search for a flight
+          </a>
+
+        </div>
+
+
+
+        <!-- FLIGHT RESULT -->
+
+        <div
+          id="flightResult"
+          class="flight-result hidden"
+        >
+
+
+          <div class="flight-result-header">
+
+
+            <div>
+
+              <span class="result-label">
+                FLIGHT STATUS
+              </span>
+
+
+              <h3 id="resultAirline">
+                --
+              </h3>
+
+
+              <p id="resultTrackingNumber">
+                --
+              </p>
+
+            </div>
+
+
+            <div
+              id="resultStatus"
+              class="flight-status"
+            >
+              --
+            </div>
+
+
+          </div>
+
+
+
+          <!-- ROUTE -->
+
+          <div class="flight-route-card">
+
+
+            <div class="route-location">
+
+              <span class="route-label">
+                FROM
+              </span>
+
+              <strong id="resultDepartureAirport">
+                --
+              </strong>
+
+              <span id="resultDepartureTime">
+                --
+              </span>
+
+            </div>
+
+
+            <div class="route-middle">
+
+              <div class="route-line">
+
+                <span class="route-plane">
+                  ✈
+                </span>
+
+              </div>
+
+
+              <span id="resultFlightNumber">
+                --
+              </span>
+
+            </div>
+
+
+            <div class="route-location route-location-right">
+
+              <span class="route-label">
+                TO
+              </span>
+
+              <strong id="resultDestinationAirport">
+                --
+              </strong>
+
+              <span>
+                Destination
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- FLIGHT INFORMATION -->
+
+          <div class="flight-information">
+
+
+            <div class="information-item">
+
+              <span>
+                Passenger
+              </span>
+
+              <strong id="resultPassengerName">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Travel Date
+              </span>
+
+              <strong id="resultTravelDate">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Departure
+              </span>
+
+              <strong id="resultDepartureTimeDetail">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Flight Duration
+              </span>
+
+              <strong id="resultFlightDuration">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Terminal
+              </span>
+
+              <strong id="resultTerminal">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Seat
+              </span>
+
+              <strong id="resultSeat">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Class
+              </span>
+
+              <strong id="resultFlightClass">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Group
+              </span>
+
+              <strong id="resultGroup">
+                --
+              </strong>
+
+            </div>
+
+
+            <div class="information-item">
+
+              <span>
+                Booking Reference
+              </span>
+
+              <strong id="resultBookingReference">
+                --
+              </strong>
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- JOURNEY PROGRESS -->
+
+          <div class="journey-section">
+
+
+            <div class="journey-heading">
+
+              <div>
+
+                <span class="result-label">
+                  JOURNEY
+                </span>
+
+                <h3>
+                  Flight progress
+                </h3>
+
+              </div>
+
+
+              <span id="lastUpdated">
+                --
+              </span>
+
+            </div>
+
+
+            <div class="journey-progress">
+
+
+              <div
+                class="progress-line"
+                id="progressLine"
+              ></div>
+
+
+              <div
+                class="progress-step"
+                data-status="Processing"
+              >
+
+                <div class="progress-circle">
+                  1
+                </div>
+
+                <span>
+                  Processing
+                </span>
+
+              </div>
+
+
+              <div
+                class="progress-step"
+                data-status="Confirmed"
+              >
+
+                <div class="progress-circle">
+                  2
+                </div>
+
+                <span>
+                  Confirmed
+                </span>
+
+              </div>
+
+
+              <div
+                class="progress-step"
+                data-status="current"
+              >
+
+                <div class="progress-circle">
+                  3
+                </div>
+
+                <span id="currentJourneyStatus">
+                  Completed
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+
+          <!-- ERROR -->
+
+          <div
+            id="flightError"
+            class="flight-error hidden"
+          >
+
+            <div class="error-icon">
+              !
+            </div>
+
+
+            <div>
+
+              <span>
+                FLIGHT UPDATE
+              </span>
+
+              <h3>
+                Important information
+              </h3>
+
+              <p id="flightErrorMessage">
+                --
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BEFORE YOU FLY
+    ====================================================== -->
+
+    <section
+      id="before-you-fly"
+      class="before-section airplane-bg airplane-2"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading centered">
+
+          <div class="eyebrow">
+            BEFORE YOU FLY
+          </div>
+
+          <h2>
+            Get ready for your journey.
+          </h2>
+
+          <p>
+            A smoother trip starts with a little preparation.
+          </p>
+
+        </div>
+
+
+
+        <div class="before-grid">
+
+
+          <article class="before-card">
+
+            <span class="card-number">
+              01
+            </span>
+
+            <h3>
+              Check your flight
+            </h3>
+
+            <p>
+              Check your flight status before leaving
+              for the airport and look out for any
+              changes to your journey.
+            </p>
+
+            <a href="#track">
+              Check flight
+            </a>
+
+          </article>
+
+
+
+          <article class="before-card">
+
+            <span class="card-number">
+              02
+            </span>
+
+            <h3>
+              Prepare your documents
+            </h3>
+
+            <p>
+              Keep your travel documents, identification,
+              booking information and other required
+              documents ready.
+            </p>
+
+            <a href="#contact">
+              Travel help
+            </a>
+
+          </article>
+
+
+
+          <article class="before-card">
+
+            <span class="card-number">
+              03
+            </span>
+
+            <h3>
+              Allow enough time
+            </h3>
+
+            <p>
+              Give yourself enough time for airport
+              arrival, check-in, security and boarding.
+            </p>
+
+            <a href="#services">
+              Travel information
+            </a>
+
+          </article>
+
+
+
+          <article class="before-card">
+
+            <span class="card-number">
+              04
+            </span>
+
+            <h3>
+              Check your baggage
+            </h3>
+
+            <p>
+              Review your airline's baggage requirements
+              before travelling and make sure your bags
+              are properly prepared.
+            </p>
+
+            <a href="#faq">
+              Read FAQ
+            </a>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRAVEL SERVICES
+    ====================================================== -->
+
+    <section
+      id="services"
+      class="services-section airplane-bg airplane-3"
+    >
+
+      <div class="container">
+
+
+        <div class="services-layout">
+
+
+          <div class="services-intro">
+
+            <div class="eyebrow">
+              TRAVEL SERVICES
+            </div>
+
+            <h2>
+              Make every part of
+              your journey easier.
+            </h2>
+
+            <p>
+              From flight tracking to travel preparation,
+              find the information you need in one place.
+            </p>
+
+
+            <a
+              href="#contact"
+              class="primary-button"
+            >
+              Get Travel Help
+            </a>
+
+          </div>
+
+
+
+          <div class="service-list">
+
+
+            <article class="service-item">
+
+              <span class="service-number">
+                01
+              </span>
+
+              <div>
+
+                <h3>
+                  Flight Tracking
+                </h3>
+
+                <p>
+                  Search your tracking number and
+                  view your available journey information.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="service-item">
+
+              <span class="service-number">
+                02
+              </span>
+
+              <div>
+
+                <h3>
+                  Flight Updates
+                </h3>
+
+                <p>
+                  Follow the current status of your
+                  journey from departure through arrival.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="service-item">
+
+              <span class="service-number">
+                03
+              </span>
+
+              <div>
+
+                <h3>
+                  Travel Preparation
+                </h3>
+
+                <p>
+                  Find useful reminders covering documents,
+                  baggage, airport arrival and boarding.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="service-item">
+
+              <span class="service-number">
+                04
+              </span>
+
+              <div>
+
+                <h3>
+                  Journey Assistance
+                </h3>
+
+                <p>
+                  Find answers to common questions and
+                  information to help with your journey.
+                </p>
+
+              </div>
+
+            </article>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         JOURNEY INFORMATION
+    ====================================================== -->
+
+    <section class="journey-info-section">
+
+      <div class="container">
+
+
+        <div class="journey-info-card">
+
+
+          <div class="journey-info-content">
+
+            <div class="eyebrow">
+              YOUR JOURNEY
+            </div>
+
+            <h2>
+              From departure
+              to arrival.
+            </h2>
+
+            <p>
+              Keep track of the important stages of
+              your flight journey in one simple place.
+            </p>
+
+          </div>
+
+
+
+          <div class="journey-info-list">
+
+
+            <div class="journey-info-item">
+
+              <span>
+                01
+              </span>
+
+              <div>
+
+                <strong>
+                  Processing
+                </strong>
+
+                <p>
+                  Your flight profile has been created
+                  and is being prepared.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="journey-info-item">
+
+              <span>
+                02
+              </span>
+
+              <div>
+
+                <strong>
+                  Confirmed
+                </strong>
+
+                <p>
+                  Your flight has been confirmed and is
+                  ready for the next stage of the journey.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="journey-info-item">
+
+              <span>
+                03
+              </span>
+
+              <div>
+
+                <strong>
+                  Current Flight Status
+                </strong>
+
+                <p>
+                  The third stage reflects the current
+                  status selected for the flight.
+                </p>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAQ
+    ====================================================== -->
+
+    <section
+      id="faq"
+      class="faq-section"
+    >
+
+      <div class="container">
+
+
+        <div class="section-heading centered">
+
+          <div class="eyebrow">
+            TRAVEL FAQ
+          </div>
+
+          <h2>
+            Common questions
+          </h2>
+
+          <p>
+            Quick answers to common flight tracking
+            and travel questions.
+          </p>
+
+        </div>
+
+
+
+        <div class="faq-list">
+
+
+          <details class="faq-item">
+
+            <summary>
+              How do I track my flight?
+            </summary>
+
+            <p>
+              Enter your flight tracking number into
+              the tracking field at the top of this page
+              and select Track Flight.
+            </p>
+
+          </details>
+
+
+
+          <details class="faq-item">
+
+            <summary>
+              What information can I see?
+            </summary>
+
+            <p>
+              Depending on the flight profile, available
+              information may include the passenger name,
+              airline, flight number, route, travel date,
+              departure time, flight duration, terminal,
+              seat, class, booking reference and current status.
+            </p>
+
+          </details>
+
+
+
+          <details class="faq-item">
+
+            <summary>
+              Why does my flight show an error?
+            </summary>
+
+            <p>
+              If the flight has been placed in an Error
+              status, an update from the flight controller
+              may be displayed on the tracking page.
+            </p>
+
+          </details>
+
+
+
+          <details class="faq-item">
+
+            <summary>
+              Can I track a flight without an account?
+            </summary>
+
+            <p>
+              Public flight tracking can be accessed using
+              the tracking number provided for the flight.
+              No controller account is required to view
+              the public tracking result.
+            </p>
+
+          </details>
+
+
+
+          <details class="faq-item">
+
+            <summary>
+              Why can't I find my flight?
+            </summary>
+
+            <p>
+              Make sure the tracking number is entered
+              correctly. If the number is still not found,
+              contact the appropriate travel support team.
+            </p>
+
+          </details>
+
+
+
+          <details class="faq-item">
+
+            <summary>
+              Does the tracking page show a live aircraft map?
+            </summary>
+
+            <p>
+              This tracking service displays the journey
+              information available for the flight profile.
+              Live aircraft positioning is not shown unless
+              a real flight-location data source has been
+              connected.
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CONTACT
+    ====================================================== -->
+
+    <section
+      id="contact"
+      class="contact-section"
+    >
+
+      <div class="container">
+
+
+        <div class="contact-card">
+
+
+          <div>
+
+            <div class="eyebrow">
+              NEED HELP?
+            </div>
+
+            <h2>
+              Your journey,
+              made simpler.
+            </h2>
+
+            <p>
+              If you have questions about your journey,
+              flight information or tracking details,
+              use the available support channels.
+            </p>
+
+          </div>
+
+
+
+          <div class="contact-actions">
+
+            <a
+              href="mailto:info@Travellnest.com"
+              class="contact-button"
+            >
+              Contact Support
+            </a>
+
+            <a
+              href="#track"
+              class="contact-link"
+            >
+              Track another flight →
+            </a>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+
+      <div class="footer-brand">
+
+        <a
+          href="index.html"
+          class="brand"
+        >
+
+          <span class="brand-mark">
+            T
+          </span>
+
+          <span class="brand-text">
+            Travellnest
+          </span>
+
+        </a>
+
+
+        <p>
+          Flight information, destinations and
+          journey tracking in one simple place.
+        </p>
+
+      </div>
+
+
+
+      <div class="footer-links">
+
+        <div>
+
+          <strong>
+            Explore
+          </strong>
+
+          <a href="#track">
+            Track Flight
+          </a>
+
+          <a href="#popular-flights">
+            Popular Flights
+          </a>
+
+          <a href="#before-you-fly">
+            Before You Fly
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <strong>
+            Help
+          </strong>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#faq">
+            FAQ
+          </a>
+
+          <a href="#contact">
+            Contact
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+    <div class="container footer-bottom">
+
+      <span>
+        © 2026 Travellnest. All rights reserved.
+      </span>
+
+      <span>
+        Flight Tracking
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       FREE / TEST FLIGHT POPUP
+  ====================================================== -->
+
+  <div
+    id="flightAccessPopup"
+    class="flight-popup hidden"
+  >
+
+    <div
+      class="flight-popup-overlay"
+      onclick="closeFlightAccessPopup()"
+    ></div>
+
+
+    <div class="flight-popup-card">
+
+
+      <button
+        type="button"
+        class="flight-popup-close"
+        onclick="closeFlightAccessPopup()"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+
+      <div class="flight-popup-icon">
+        ✈
+      </div>
+
+
+      <span class="flight-popup-label">
+        FLIGHT TRACKING
+      </span>
+
+
+      <h2 id="flightPopupTitle">
+        Flight tracking information
+      </h2>
+
+
+      <p id="flightPopupMessage">
+        This flight profile is currently available
+        through the free tracking service.
+      </p>
+
+
+      <button
+        type="button"
+        class="flight-popup-button"
+        onclick="closeFlightAccessPopup()"
+      >
+        Continue
+      </button>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       MOBILE MENU
+  ====================================================== -->
+
+  <script>
+
+    const mobileMenuButton =
+      document.getElementById(
+        "mobileMenuButton"
+      );
+
+
+    const headerNav =
+      document.getElementById(
+        "headerNav"
+      );
+
+
+    mobileMenuButton.onclick =
+      function () {
+
+        headerNav.classList.toggle(
+          "mobile-open"
+        );
+
+
+        const isOpen =
+          headerNav.classList.contains(
+            "mobile-open"
+          );
+
+
+        mobileMenuButton.setAttribute(
+          "aria-expanded",
+          isOpen
+        );
+
+      };
+
+
+    const mobileNavLinks =
+      headerNav.querySelectorAll("a");
+
+
+    mobileNavLinks.forEach(
+      function (link) {
+
+        link.onclick =
+          function () {
+
+            headerNav.classList.remove(
+              "mobile-open"
+            );
+
+
+            mobileMenuButton.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          };
+
+      }
+    );
+
+  </script>
+
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>
