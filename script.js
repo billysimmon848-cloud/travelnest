@@ -662,6 +662,8 @@ trackingForm.addEventListener(
             '';
 
 
+          hideBoardingPassResult();
+
           showFlightResult();
 
 
@@ -673,7 +675,7 @@ trackingForm.addEventListener(
 
 
       /* =====================================================
-         TRY BOARDING PASS SECOND
+         TRY BOARDING PASS
       ===================================================== */
 
       const boardingPassResponse =
@@ -694,6 +696,10 @@ trackingForm.addEventListener(
           boardingPassData.boardingPass
         ) {
 
+          currentTrackedFlight =
+            null;
+
+
           renderBoardingPass(
             boardingPassData.boardingPass
           );
@@ -701,10 +707,6 @@ trackingForm.addEventListener(
 
           trackingMessage.textContent =
             '';
-
-
-          currentTrackedFlight =
-            null;
 
 
           hideFlightResult();
@@ -718,6 +720,10 @@ trackingForm.addEventListener(
 
       }
 
+
+      /* =====================================================
+         NOTHING FOUND
+      ===================================================== */
 
       throw new Error(
         'Tracking number not found.'
