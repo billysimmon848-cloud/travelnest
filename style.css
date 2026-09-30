@@ -83,6 +83,13 @@ img {
 
 }
 
+.boarding-airline-logo {
+  width: 120px;
+  height: 35px;
+  object-fit: contain;
+  display: block;
+}
+
 
 a {
 
