@@ -114,10 +114,8 @@ CONTAINER
 
 .container {
 
-  width: min(
-    1180px,
-    calc(100% - 40px)
-  );
+  width: min(1180px,
+      calc(100% - 40px));
 
   margin: 0 auto;
 
@@ -355,7 +353,7 @@ AIRPLANE BACKGROUND SECTIONS
 }
 
 
-.airplane-bg > .container {
+.airplane-bg>.container {
 
   position: relative;
 
@@ -465,11 +463,9 @@ HERO
   max-width: 650px;
 
   font-size:
-    clamp(
-      3rem,
+    clamp(3rem,
       5vw,
-      5.2rem
-    );
+      5.2rem);
 
   line-height: 0.98;
 
@@ -569,8 +565,7 @@ TRACKING FORM
     0 17px;
 
   border:
-    1px solid
-    rgba(255, 255, 255, 0.25);
+    1px solid rgba(255, 255, 255, 0.25);
 
   border-radius: 10px;
 
@@ -582,8 +577,7 @@ TRACKING FORM
   outline: none;
 
   box-shadow:
-    0 8px 25px
-    rgba(0, 0, 0, 0.08);
+    0 8px 25px rgba(0, 0, 0, 0.08);
 
   backdrop-filter:
     blur(8px);
@@ -684,8 +678,7 @@ TRACKING FORM
   background: #57b98c;
 
   box-shadow:
-    0 0 0 5px
-    rgba(87, 185, 140, 0.12);
+    0 0 0 5px rgba(87, 185, 140, 0.12);
 
 }
 
@@ -840,11 +833,9 @@ GENERAL SECTIONS
 .section-heading h2 {
 
   font-size:
-    clamp(
-      34px,
+    clamp(34px,
       4vw,
-      50px
-    );
+      50px);
 
   line-height: 1.05;
 
@@ -865,7 +856,7 @@ GENERAL SECTIONS
 }
 
 
-.section-heading > p {
+.section-heading>p {
 
   max-width: 580px;
 
@@ -882,8 +873,7 @@ EMPTY TRACKING
     75px 30px;
 
   border:
-    1px dashed
-    #cbd7da;
+    1px dashed #cbd7da;
 
   border-radius:
     var(--radius);
@@ -1088,9 +1078,7 @@ ROUTE CARD
   display: grid;
 
   grid-template-columns:
-    1fr
-    1.3fr
-    1fr;
+    1fr 1.3fr 1fr;
 
   align-items: center;
 
@@ -1191,13 +1179,11 @@ ROUTE CARD
   height: 1px;
 
   background:
-    repeating-linear-gradient(
-      to right,
+    repeating-linear-gradient(to right,
       #a9b7bb 0,
       #a9b7bb 6px,
       transparent 6px,
-      transparent 12px
-    );
+      transparent 12px);
 
 }
 
@@ -1219,7 +1205,7 @@ ROUTE CARD
 }
 
 
-.route-middle > span:last-child {
+.route-middle>span:last-child {
 
   color:
     var(--muted);
@@ -1335,7 +1321,7 @@ JOURNEY
 }
 
 
-.journey-heading > span {
+.journey-heading>span {
 
   color:
     var(--muted);
@@ -1602,7 +1588,7 @@ POPULAR FLIGHTS
 }
 
 
-.popular-heading > p {
+.popular-heading>p {
 
   max-width: 390px;
 
@@ -1691,11 +1677,9 @@ POPULAR FLIGHTS
   inset: 0;
 
   background:
-    linear-gradient(
-      to top,
+    linear-gradient(to top,
       rgba(10, 22, 28, 0.90),
-      rgba(10, 22, 28, 0.08) 65%
-    );
+      rgba(10, 22, 28, 0.08) 65%);
 
 }
 
@@ -1888,8 +1872,7 @@ SERVICES
   display: grid;
 
   grid-template-columns:
-    0.8fr
-    1.2fr;
+    0.8fr 1.2fr;
 
   gap: 100px;
 
@@ -1899,11 +1882,9 @@ SERVICES
 .services-intro h2 {
 
   font-size:
-    clamp(
-      34px,
+    clamp(34px,
       4vw,
-      52px
-    );
+      52px);
 
   line-height: 1.05;
 
@@ -2036,8 +2017,7 @@ JOURNEY INFORMATION
   display: grid;
 
   grid-template-columns:
-    0.9fr
-    1.1fr;
+    0.9fr 1.1fr;
 
   gap: 100px;
 
@@ -2057,11 +2037,9 @@ JOURNEY INFORMATION
 .journey-info-content h2 {
 
   font-size:
-    clamp(
-      35px,
+    clamp(35px,
       4vw,
-      53px
-    );
+      53px);
 
   line-height: 1.05;
 
@@ -2087,8 +2065,7 @@ JOURNEY INFORMATION
 .journey-info-list {
 
   border-top:
-    1px solid
-    rgba(255, 255, 255, 0.12);
+    1px solid rgba(255, 255, 255, 0.12);
 
 }
 
@@ -2106,13 +2083,12 @@ JOURNEY INFORMATION
     23px 0;
 
   border-bottom:
-    1px solid
-    rgba(255, 255, 255, 0.12);
+    1px solid rgba(255, 255, 255, 0.12);
 
 }
 
 
-.journey-info-item > span {
+.journey-info-item>span {
 
   color:
     #83b6bb;
@@ -2268,11 +2244,9 @@ CONTACT
   border-radius: 20px;
 
   background:
-    linear-gradient(
-      135deg,
+    linear-gradient(135deg,
       #edf5f5,
-      #f7f0e8
-    );
+      #f7f0e8);
 
   display: flex;
 
@@ -2290,11 +2264,9 @@ CONTACT
   max-width: 650px;
 
   font-size:
-    clamp(
-      34px,
+    clamp(34px,
       4vw,
-      52px
-    );
+      52px);
 
   line-height: 1.05;
 
@@ -2394,8 +2366,7 @@ FOOTER
   display: grid;
 
   grid-template-columns:
-    1fr
-    0.7fr;
+    1fr 0.7fr;
 
   gap: 80px;
 
@@ -2475,8 +2446,7 @@ FOOTER
 .footer-bottom {
 
   border-top:
-    1px solid
-    rgba(255, 255, 255, 0.1);
+    1px solid rgba(255, 255, 255, 0.1);
 
   padding:
     20px 0;
@@ -2542,10 +2512,8 @@ FLIGHT ACCESS POPUP
   z-index: 2;
 
   width:
-    min(
-      440px,
-      100%
-    );
+    min(440px,
+      100%);
 
   padding:
     38px 32px;
@@ -2560,8 +2528,7 @@ FLIGHT ACCESS POPUP
     center;
 
   box-shadow:
-    0 25px 70px
-    rgba(0, 0, 0, 0.22);
+    0 25px 70px rgba(0, 0, 0, 0.22);
 
 }
 
@@ -2729,7 +2696,7 @@ FLIGHT ACCESS POPUP
 
 .route-location span:last-child,
 .route-label,
-.route-middle > span:last-child {
+.route-middle>span:last-child {
   color: var(--muted);
 }
 
@@ -2749,7 +2716,7 @@ FLIGHT ACCESS POPUP
 }
 
 
-.journey-heading > span {
+.journey-heading>span {
   color: var(--muted);
 }
 
@@ -2774,7 +2741,7 @@ FLIGHT ACCESS POPUP
 
 
 .section-heading p,
-.popular-heading > p,
+.popular-heading>p,
 .before-card p,
 .service-item p,
 .faq-item p,
@@ -2815,8 +2782,7 @@ TABLET / MOBILE NAVIGATION
       1px solid var(--line);
 
     box-shadow:
-      0 15px 30px
-      rgba(18, 33, 43, 0.08);
+      0 15px 30px rgba(18, 33, 43, 0.08);
 
     flex-direction: column;
 
@@ -2888,11 +2854,9 @@ TABLET / MOBILE NAVIGATION
   .hero h1 {
 
     font-size:
-      clamp(
-        2.8rem,
+      clamp(2.8rem,
         7vw,
-        4.3rem
-      );
+        4.3rem);
 
   }
 
@@ -2975,10 +2939,8 @@ MOBILE
   .container {
 
     width:
-      min(
-        100% - 28px,
-        1180px
-      );
+      min(100% - 28px,
+        1180px);
 
   }
 
@@ -3044,11 +3006,9 @@ MOBILE
       18px;
 
     font-size:
-      clamp(
-        2.5rem,
+      clamp(2.5rem,
         12vw,
-        3.6rem
-      );
+        3.6rem);
 
     line-height:
       1;
@@ -3110,7 +3070,7 @@ MOBILE
     width:
       100%;
 
-    
+
     height: 64px;
     min-height: 64px;
 
@@ -3156,11 +3116,9 @@ MOBILE
   .section-heading h2 {
 
     font-size:
-      clamp(
-        32px,
+      clamp(32px,
         9vw,
-        44px
-      );
+        44px);
 
   }
 
@@ -3189,7 +3147,7 @@ MOBILE
   }
 
 
-  .popular-heading > p {
+  .popular-heading>p {
 
     margin-bottom:
       0;
@@ -3407,6 +3365,42 @@ MOBILE
     gap:
       8px;
 
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  #boardingPassResult .flight-result-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+
+  #boardingPassResult .boarding-airline-logo {
+    width: 30px;
+    height: 24px;
+    margin: 0;
+  }
+
+
+  #boardingPassResult .flight-result-header>div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-left: auto;
+  }
+
+
+  #boardingPassResult #boardingPassTrackingNumber {
+    text-align: right;
+    margin: 0;
+  }
+
+
+  #boardingPassResult #boardingPassStatus {
+    margin-left: 15px;
   }
 
 }

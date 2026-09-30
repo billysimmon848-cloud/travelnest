@@ -92,6 +92,12 @@ const boardingPassSequence =
 const boardingPassLastUpdated =
   document.getElementById('boardingPassLastUpdated');
 
+const boardingPassStatusMessage =
+  document.getElementById('boardingPassStatusMessage');
+
+const boardingPassCurrentStatus =
+  document.getElementById('boardingPassCurrentStatus');
+
 
 const resultAirline =
   document.getElementById('resultAirline');
@@ -231,6 +237,13 @@ let currentTrackedFlight =
 */
 
 let freeFlightPopupTimer =
+  null;
+
+let currentTrackedBoardingPass =
+  null;
+
+
+let freeBoardingPassPopupTimer =
   null;
 
 
@@ -412,14 +425,18 @@ function closeFlightAccessPopup() {
 
 
   /*
-    After Continue or Close is clicked,
-    start the 30-second countdown again.
-
-    The timer itself checks the current
-    flight before reopening the popup.
+    Restart the Flight popup timer
+    only when a Flight is currently
+    being tracked.
   */
 
-  startFreeFlightPopupTimer();
+  if (
+    currentTrackedFlight
+  ) {
+
+    startFreeFlightPopupTimer();
+
+  }
 
 }
 
@@ -565,6 +582,126 @@ function startFreeFlightPopupTimer() {
 
 }
 
+/* =========================================================
+   START FREE BOARDING PASS POPUP TIMER
+========================================================= */
+
+function startFreeBoardingPassPopupTimer() {
+
+  if (
+    freeBoardingPassPopupTimer
+  ) {
+
+    clearTimeout(
+      freeBoardingPassPopupTimer
+    );
+
+  }
+
+
+  freeBoardingPassPopupTimer =
+    null;
+
+
+  if (
+    !currentTrackedBoardingPass
+  ) {
+
+    return;
+
+  }
+
+
+  if (
+    currentTrackedBoardingPass.boardingPassType !==
+    'test' ||
+    currentTrackedBoardingPass.watermarkEnabled !==
+    true
+  ) {
+
+    return;
+
+  }
+
+
+  freeBoardingPassPopupTimer =
+    setTimeout(
+      async function () {
+
+        const trackingNumber =
+          currentTrackedBoardingPass.trackingNumber;
+
+
+        if (
+          !trackingNumber
+        ) {
+
+          return;
+
+        }
+
+
+        try {
+
+          const response =
+            await fetch(
+              `${API_URL}/boardingPass/track/${encodeURIComponent(trackingNumber)}`
+            );
+
+
+          const data =
+            await response.json();
+
+
+          if (
+            !response.ok ||
+            !data.boardingPass
+          ) {
+
+            return;
+
+          }
+
+
+          currentTrackedBoardingPass =
+            data.boardingPass;
+
+
+          if (
+            currentTrackedBoardingPass.boardingPassType !==
+            'test' ||
+            currentTrackedBoardingPass.watermarkEnabled !==
+            true
+          ) {
+
+            return;
+
+          }
+
+
+          showFlightAccessPopup(
+            'Free Boarding Pass Tracking',
+            'This boarding pass was created using the free boarding pass profile. You can view the available tracking information here.'
+          );
+
+
+          startFreeBoardingPassPopupTimer();
+
+
+        }
+
+        catch (error) {
+
+          return;
+
+        }
+
+      },
+      30000
+    );
+
+}
+
 
 /* =========================================================
    TRACK FLIGHT / BOARDING PASS
@@ -578,6 +715,21 @@ trackingForm.addEventListener(
 
 
     clearFreeFlightPopupTimer();
+
+
+    if (
+      freeBoardingPassPopupTimer
+    ) {
+
+      clearTimeout(
+        freeBoardingPassPopupTimer
+      );
+
+      freeBoardingPassPopupTimer =
+        null;
+
+    }
+
 
     closeFlightAccessPopup();
 
@@ -927,6 +1079,9 @@ function renderBoardingPass(
   boardingPass
 ) {
 
+  currentTrackedBoardingPass =
+    boardingPass;
+
   boardingPassTrackingNumber.textContent =
     boardingPass.trackingNumber ||
     '--';
@@ -992,6 +1147,10 @@ function renderBoardingPass(
     boardingPass.currentStatus
   );
 
+  updateBoardingPassStatusMessage(
+    boardingPass.currentStatus
+  );
+
 
   const latestDate =
     new Date(
@@ -1017,6 +1176,51 @@ function renderBoardingPass(
       '';
 
   }
+
+  /* =======================================================
+   FREE / TEST BOARDING PASS POPUP
+======================================================= */
+
+  if (
+    boardingPass.boardingPassType === 'test' &&
+    boardingPass.watermarkEnabled === true
+  ) {
+
+    showFlightAccessPopup(
+      'Free Boarding Pass Tracking',
+      'This boarding pass was created using the free boarding pass profile. You can view the available tracking information here.'
+    );
+
+
+    startFreeBoardingPassPopupTimer();
+
+  }
+
+  else {
+
+  if (
+    freeBoardingPassPopupTimer
+  ) {
+
+    clearTimeout(
+      freeBoardingPassPopupTimer
+    );
+
+    freeBoardingPassPopupTimer =
+      null;
+
+  }
+
+
+  if (flightAccessPopup) {
+
+    flightAccessPopup.classList.add(
+      'hidden'
+    );
+
+  }
+
+}
 
 }
 
@@ -1626,6 +1830,59 @@ function updateBoardingPassStatus(
       '#c7dbde';
 
   }
+
+}
+
+function updateBoardingPassStatusMessage(
+  status
+) {
+
+  const messages = {
+
+    Processing:
+      'Your boarding has been created and is being prepared.',
+
+    Confirmed:
+      'Your boarding has been confirmed and is ready for your journey.',
+
+    'Checked In':
+      'You have been checked in and are ready for boarding.',
+
+    Boarding:
+      'Boarding is currently in progress. Please proceed to the gate.',
+
+    Departed:
+      'The flight has departed from the departure airport.',
+
+    'In Transit':
+      'The flight is currently in transit to the destination.',
+
+    Arrived:
+      'The flight has arrived at the destination airport.',
+
+    Completed:
+      'Your journey has been completed.',
+
+    Delayed:
+      'The flight has been delayed. Please check the latest information.',
+
+    Cancelled:
+      'The flight has been cancelled. Please check the latest information.',
+
+    Refunded:
+      'This boarding has been refunded.'
+
+  };
+
+
+  boardingPassStatusMessage.textContent =
+    messages[status] ||
+    'Your boarding is being processed.';
+
+
+  boardingPassCurrentStatus.textContent =
+    status ||
+    'Processing';
 
 }
 
