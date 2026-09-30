@@ -4,7 +4,7 @@
 
 const API_URL =
   'https://api.justdoks.com/api';
-  
+
 
 /* =========================================================
    ELEMENTS
@@ -32,6 +32,65 @@ const trackingEmpty =
 
 const flightResult =
   document.getElementById('flightResult');
+
+const boardingPassResult =
+  document.getElementById('boardingPassResult');
+
+
+const boardingPassStatus =
+  document.getElementById('boardingPassStatus');
+
+
+const boardingPassFrom =
+  document.getElementById('boardingPassFrom');
+
+
+const boardingPassTo =
+  document.getElementById('boardingPassTo');
+
+
+const boardingPassName =
+  document.getElementById('boardingPassName');
+
+
+const boardingPassTrackingNumber =
+  document.getElementById('boardingPassTrackingNumber');
+
+
+const boardingPassDate =
+  document.getElementById('boardingPassDate');
+
+
+const boardingPassTime =
+  document.getElementById('boardingPassTime');
+
+
+const boardingPassTimeDetail =
+  document.getElementById('boardingPassTimeDetail');
+
+
+const boardingPassDuration =
+  document.getElementById('boardingPassDuration');
+
+
+const boardingPassClass =
+  document.getElementById('boardingPassClass');
+
+
+const boardingPassGate =
+  document.getElementById('boardingPassGate');
+
+
+const boardingPassSeat =
+  document.getElementById('boardingPassSeat');
+
+
+const boardingPassSequence =
+  document.getElementById('boardingPassSequence');
+
+
+const boardingPassLastUpdated =
+  document.getElementById('boardingPassLastUpdated');
 
 
 const resultAirline =
@@ -222,14 +281,58 @@ function hideFlightResult() {
     'hidden'
   );
 
+}
+
+/* =========================================================
+   SHOW BOARDING PASS RESULT
+========================================================= */
+
+function showBoardingPassResult() {
+
+  if (!boardingPassResult) {
+    return;
+  }
+
+
+  if (heroContent) {
+
+    heroContent.appendChild(
+      boardingPassResult
+    );
+
+  }
+
+
+  boardingPassResult.classList.remove(
+    'hidden'
+  );
+
 
   if (trackingEmpty) {
 
-    trackingEmpty.classList.remove(
+    trackingEmpty.classList.add(
       'hidden'
     );
 
   }
+
+}
+
+
+/* =========================================================
+   HIDE BOARDING PASS RESULT
+========================================================= */
+
+function hideBoardingPassResult() {
+
+  if (!boardingPassResult) {
+    return;
+  }
+
+
+  boardingPassResult.classList.add(
+    'hidden'
+  );
 
 }
 
@@ -347,9 +450,9 @@ function startFreeFlightPopupTimer() {
 
   if (
     currentTrackedFlight.flightType !==
-      'test' ||
+    'test' ||
     currentTrackedFlight.watermarkEnabled !==
-      true
+    true
   ) {
 
     return;
@@ -423,9 +526,9 @@ function startFreeFlightPopupTimer() {
 
           if (
             currentTrackedFlight.flightType !==
-              'test' ||
+            'test' ||
             currentTrackedFlight.watermarkEnabled !==
-              true
+            true
           ) {
 
             return;
@@ -464,7 +567,7 @@ function startFreeFlightPopupTimer() {
 
 
 /* =========================================================
-   TRACK FLIGHT
+   TRACK FLIGHT / BOARDING PASS
 ========================================================= */
 
 trackingForm.addEventListener(
@@ -474,13 +577,7 @@ trackingForm.addEventListener(
     event.preventDefault();
 
 
-    /*
-      Stop any previous popup timer
-      when starting a new search.
-    */
-
     clearFreeFlightPopupTimer();
-
 
     closeFlightAccessPopup();
 
@@ -499,6 +596,8 @@ trackingForm.addEventListener(
 
       hideFlightResult();
 
+      hideBoardingPassResult();
+
 
       currentTrackedFlight =
         null;
@@ -510,7 +609,7 @@ trackingForm.addEventListener(
 
 
     trackingMessage.textContent =
-      'Searching for flight...';
+      'Searching...';
 
 
     trackButton.disabled =
@@ -521,63 +620,129 @@ trackingForm.addEventListener(
       'Searching...';
 
 
+    hideFlightResult();
+
+    hideBoardingPassResult();
+
+
     try {
 
-      const response =
+      /* =====================================================
+         TRY FLIGHT FIRST
+      ===================================================== */
+
+      const flightResponse =
         await fetch(
           `${API_URL}/flights/track/${encodeURIComponent(trackingNumber)}`
         );
 
 
-      const data =
-        await response.json();
+      if (
+        flightResponse.ok
+      ) {
+
+        const flightData =
+          await flightResponse.json();
 
 
-      if (!response.ok) {
+        if (
+          flightData.flight
+        ) {
 
-        throw new Error(
-          data.message ||
-          'Flight not found.'
-        );
+          currentTrackedFlight =
+            flightData.flight;
+
+
+          renderFlight(
+            flightData.flight
+          );
+
+
+          trackingMessage.textContent =
+            '';
+
+
+          showFlightResult();
+
+
+          return;
+
+        }
 
       }
 
 
-      /*
-        Store the latest flight data.
-      */
+      /* =====================================================
+         TRY BOARDING PASS SECOND
+      ===================================================== */
 
-      currentTrackedFlight =
-        data.flight;
+      const boardingPassResponse =
+        await fetch(
+          `${API_URL}/boardingPass/track/${encodeURIComponent(trackingNumber)}`
+        );
 
 
-      renderFlight(
-        data.flight
+      if (
+        boardingPassResponse.ok
+      ) {
+
+        const boardingPassData =
+          await boardingPassResponse.json();
+
+
+        if (
+          boardingPassData.boardingPass
+        ) {
+
+          renderBoardingPass(
+            boardingPassData.boardingPass
+          );
+
+
+          trackingMessage.textContent =
+            '';
+
+
+          currentTrackedFlight =
+            null;
+
+
+          hideFlightResult();
+
+          showBoardingPassResult();
+
+
+          return;
+
+        }
+
+      }
+
+
+      throw new Error(
+        'Tracking number not found.'
       );
 
+    }
 
-      trackingMessage.textContent =
-        '';
-
-
-      showFlightResult();
-
-
-    } catch (error) {
+    catch (error) {
 
       trackingMessage.textContent =
         error.message ||
-        'Unable to find this flight.';
+        'Unable to find this tracking number.';
 
 
       hideFlightResult();
+
+      hideBoardingPassResult();
 
 
       currentTrackedFlight =
         null;
 
+    }
 
-    } finally {
+    finally {
 
       trackButton.disabled =
         false;
@@ -743,6 +908,107 @@ function renderFlight(flight) {
     clearFreeFlightPopupTimer();
 
     closeFlightAccessPopup();
+
+  }
+
+}
+
+/* =========================================================
+   RENDER BOARDING PASS
+========================================================= */
+
+function renderBoardingPass(
+  boardingPass
+) {
+
+  boardingPassTrackingNumber.textContent =
+    boardingPass.trackingNumber ||
+    '--';
+
+
+  boardingPassFrom.textContent =
+    boardingPass.from ||
+    '--';
+
+
+  boardingPassTo.textContent =
+    boardingPass.to ||
+    '--';
+
+
+  boardingPassName.textContent =
+    boardingPass.name ||
+    '--';
+
+
+  boardingPassDate.textContent =
+    formatDate(
+      boardingPass.date
+    );
+
+
+  boardingPassTime.textContent =
+    boardingPass.time ||
+    '--';
+
+
+  boardingPassTimeDetail.textContent =
+    boardingPass.time ||
+    '--';
+
+
+  boardingPassDuration.textContent =
+    boardingPass.duration ||
+    '--';
+
+
+  boardingPassClass.textContent =
+    boardingPass.class ||
+    '--';
+
+
+  boardingPassGate.textContent =
+    boardingPass.gate ||
+    '--';
+
+
+  boardingPassSeat.textContent =
+    boardingPass.seat ||
+    '--';
+
+
+  boardingPassSequence.textContent =
+    boardingPass.sequence ||
+    '--';
+
+
+  updateBoardingPassStatus(
+    boardingPass.currentStatus
+  );
+
+
+  const latestDate =
+    new Date(
+      boardingPass.updatedAt ||
+      boardingPass.createdAt
+    );
+
+
+  if (
+    !isNaN(
+      latestDate.getTime()
+    )
+  ) {
+
+    boardingPassLastUpdated.textContent =
+      `Last updated ${formatDateTime(latestDate)}`;
+
+  }
+
+  else {
+
+    boardingPassLastUpdated.textContent =
+      '';
 
   }
 
@@ -1260,6 +1526,103 @@ function formatDateTime(dateValue) {
 
 }
 
+/* =========================================================
+   BOARDING PASS STATUS
+========================================================= */
+
+function updateBoardingPassStatus(
+  status
+) {
+
+  const currentStatus =
+    status ||
+    'Processing';
+
+
+  boardingPassStatus.textContent =
+    currentStatus;
+
+
+  boardingPassStatus.className =
+    'flight-status';
+
+
+  if (
+    currentStatus === 'Arrived' ||
+    currentStatus === 'Completed'
+  ) {
+
+    boardingPassStatus.style.background =
+      'rgba(39, 128, 94, 0.2)';
+
+    boardingPassStatus.style.color =
+      '#8ed4b3';
+
+  }
+
+  else if (
+    currentStatus === 'Boarding' ||
+    currentStatus === 'Departed' ||
+    currentStatus === 'In Transit' ||
+    currentStatus === 'Checked In'
+  ) {
+
+    boardingPassStatus.style.background =
+      'rgba(23, 111, 120, 0.25)';
+
+    boardingPassStatus.style.color =
+      '#9bd6da';
+
+  }
+
+  else if (
+    currentStatus === 'Delayed'
+  ) {
+
+    boardingPassStatus.style.background =
+      'rgba(190, 137, 42, 0.2)';
+
+    boardingPassStatus.style.color =
+      '#f0c56b';
+
+  }
+
+  else if (
+    currentStatus === 'Cancelled'
+  ) {
+
+    boardingPassStatus.style.background =
+      'rgba(185, 77, 67, 0.25)';
+
+    boardingPassStatus.style.color =
+      '#ffaaa3';
+
+  }
+
+  else if (
+    currentStatus === 'Refunded'
+  ) {
+
+    boardingPassStatus.style.background =
+      'rgba(130, 91, 160, 0.25)';
+
+    boardingPassStatus.style.color =
+      '#d5b5ed';
+
+  }
+
+  else {
+
+    boardingPassStatus.style.background =
+      'rgba(255,255,255,0.1)';
+
+    boardingPassStatus.style.color =
+      '#c7dbde';
+
+  }
+
+}
+
 
 /* =========================================================
    AUTO LOAD FROM URL
@@ -1300,5 +1663,5 @@ function loadTrackingFromUrl() {
 ========================================================= */
 
 hideFlightResult();
-
+hideBoardingPassResult();
 loadTrackingFromUrl();
