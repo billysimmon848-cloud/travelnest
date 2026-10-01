@@ -3369,42 +3369,145 @@ MOBILE
 
 }
 
+/* =========================================================
+   BOARDING PASS MOBILE RESULT
+========================================================= */
+
 @media (max-width: 600px) {
 
   #boardingPassResult .flight-result-header {
-    display: flex;
+
+    display: grid;
+
+    grid-template-columns:
+      1fr auto;
+
     align-items: center;
-    justify-content: space-between;
+
+    gap: 18px;
+
+    width: 100%;
+
   }
 
 
-  #boardingPassResult .boarding-airline-logo {
-    width: 30px;
-    height: 24px;
-    margin: 0;
-  }
+  /* =======================================================
+     LEFT SIDE
+     TRACKING NUMBER + STATUS
+  ======================================================= */
 
+  #boardingPassResult .flight-result-header > div:first-child {
 
-  #boardingPassResult .flight-result-header>div:first-child {
     display: flex;
+
     flex-direction: column;
-    align-items: flex-end;
-    margin-left: auto;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    min-width: 0;
+
+    margin: 0;
+
   }
 
 
   #boardingPassResult #boardingPassTrackingNumber {
-    text-align: right;
+
+    text-align: left;
+
     margin: 0;
+
+    width: 100%;
+
+    word-break: break-word;
+
   }
 
 
   #boardingPassResult #boardingPassStatus {
-    margin-left: 15px;
+
+    margin:
+
+      8px 0 0;
+
+    text-align: left;
+
+  }
+
+
+  /* =======================================================
+     RIGHT SIDE
+     BOARDING PASS IMAGE / LOGO
+  ======================================================= */
+
+  #boardingPassResult .boarding-airline-logo {
+
+    width:
+      75px;
+
+    height:
+      60px;
+
+    object-fit:
+      contain;
+
+    margin:
+      0;
+
+    justify-self:
+      end;
+
   }
 
 }
 
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+  #boardingPassResult .flight-result-header {
+
+    grid-template-columns:
+      minmax(0, 1fr) 90px;
+
+    gap:
+      12px;
+
+  }
+
+
+  #boardingPassResult .boarding-airline-logo {
+
+    width:
+      82px;
+
+    height:
+      66px;
+
+  }
+
+
+  #boardingPassResult #boardingPassTrackingNumber {
+
+    font-size:
+      13px;
+
+  }
+
+
+  #boardingPassResult #boardingPassStatus {
+
+    font-size:
+      12px;
+
+  }
+
+}
 
 /* =========================================================
 SMALL MOBILE
