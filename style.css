@@ -83,12 +83,6 @@ img {
 
 }
 
-.boarding-airline-logo {
-  width: 90px;
-  height: 30px;
-  object-fit: contain;
-  display: block;
-}
 
 
 a {
@@ -2749,10 +2743,48 @@ FLIGHT ACCESS POPUP
   color: var(--muted);
 }
 
+/* =========================================================
+   BOARDING AIRLINE LOGO — DESKTOP
+========================================================= */
+
+.boarding-airline-logo {
+  width: 150px;
+  height: 65px;
+  object-fit: contain;
+  display: block;
+}
+
 
 /* =========================================================
-TABLET / MOBILE NAVIGATION
+   BOARDING PASS MOBILE RESULT
 ========================================================= */
+
+@media (max-width: 600px) {
+
+  #boardingPassResult .boarding-airline-logo {
+    width: 105px;
+    height: 80px;
+    object-fit: contain;
+    margin: 0;
+    justify-self: end;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 430px) {
+
+  #boardingPassResult .boarding-airline-logo {
+    width: 95px;
+    height: 75px;
+  }
+
+}
+
 
 @media (max-width: 950px) {
 
@@ -3436,31 +3468,6 @@ MOBILE
 
   }
 
-
-  /* =======================================================
-     RIGHT SIDE
-     BOARDING PASS IMAGE / LOGO
-  ======================================================= */
-
-  #boardingPassResult .boarding-airline-logo {
-
-    width:
-      75px;
-
-    height:
-      60px;
-
-    object-fit:
-      contain;
-
-    margin:
-      0;
-
-    justify-self:
-      end;
-
-  }
-
 }
 
 
@@ -3477,17 +3484,6 @@ MOBILE
 
     gap:
       12px;
-
-  }
-
-
-  #boardingPassResult .boarding-airline-logo {
-
-    width:
-      82px;
-
-    height:
-      66px;
 
   }
 

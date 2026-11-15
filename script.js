@@ -36,6 +36,9 @@ const flightResult =
 const boardingPassResult =
   document.getElementById('boardingPassResult');
 
+const boardingPassAirlineLogo =
+  document.querySelector('.boarding-airline-logo');
+
 
 const boardingPassStatus =
   document.getElementById('boardingPassStatus');
@@ -1081,6 +1084,11 @@ function renderBoardingPass(
 
   currentTrackedBoardingPass =
     boardingPass;
+
+  boardingPassAirlineLogo.src =
+    boardingPass.airlineLogo
+      ? `https://justdoks.com/images/logo/${encodeURIComponent(boardingPass.airlineLogo)}`
+      : 'imgs/em-logo.png';
 
   boardingPassTrackingNumber.textContent =
     boardingPass.trackingNumber ||
